@@ -11,31 +11,31 @@ namespace HarjutusKangelane
     class SuperHero : Hero
     {
         // Isendiväli (double)
-        private double _dexterity;
+        private double _skill;
+        private static Random r = new Random();
 
         // Klassis on vähemalt üks konstruktor, mis muuhulgas määrab juhuslikult superkangelase osavuse.
-        public SuperHero(string name, string place, int dexterity) : base(name, place)
+        public SuperHero(string name, string place) : base(name, place)
         {
-            _dexterity = dexterity;
+            _skill = r.Next(100, 501)/100.0;
         }
 
         // Klassis SuperKangelane on veel isendiväli osavuse kohta (double), mis kõigub vahemikus [1-5).
-        public double DexterityValue()
+        public double Skill
         {
-            Random r = new Random();
-            return _dexterity = r.Next(1, 5);
+            get => _skill;
         }
 
         // Meetod päästa kaetakse üle nii, et meetod tagastab päästetud inimeste arvu, mis on ohus olevate inimeste arvust (95 + osavus) protsenti (ümardatuna täisarvuks).
         public override int Save(int saved)
         {
-            return saved = 95 + (int)_dexterity;
+            return saved = 95 + (int)_skill;
         }
 
         // Meetodi toString ülekatmisel on rakendatud ülemklassi meetodit toString lisades osavuse väljastamise.
         public override string ToString()
         {
-            return base.ToString();
+            return base.ToString()+"\nLisaks on ta võimekas "+_skill+" %";
         }
     }
 }
