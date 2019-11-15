@@ -10,7 +10,7 @@ namespace HarjutusKangelane
     {
         static void Main(string[] args)
         {
-            
+            Console.WriteLine("hel");
         }
     }
 }

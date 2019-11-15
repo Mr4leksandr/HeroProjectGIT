@@ -29,13 +29,13 @@ namespace HarjutusKangelane
         // Meetod päästa kaetakse üle nii, et meetod tagastab päästetud inimeste arvu, mis on ohus olevate inimeste arvust (95 + osavus) protsenti (ümardatuna täisarvuks).
         public override int Save(int saved)
         {
-            saved = 95 + (int)_dexterity;
+            return saved = 95 + (int)_dexterity;
         }
 
         // Meetodi toString ülekatmisel on rakendatud ülemklassi meetodit toString lisades osavuse väljastamise.
         public override string ToString()
         {
-            return base.ToString()+$"\nPeaple saved: ";
+            return base.ToString();
         }
     }
 }

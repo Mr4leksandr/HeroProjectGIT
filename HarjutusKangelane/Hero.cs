@@ -40,7 +40,7 @@ namespace HarjutusKangelane
         // On ka meetod toString, mis võimaldab kangelast mõistlikult ekraanil kujutada.
         public virtual string ToString()
         {
-            return $"{_name} / {_place} \nSaved: {Save(indanger)}\n";
+            return $"{_name} / {_place} \nSaved: \n";
         }
     }
 }
